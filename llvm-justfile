@@ -1,0 +1,28 @@
+
+build_type := "Release"
+builddir := "build-" + build_type
+c_compiler := "clang-14"
+cxx_compiler := "clang++-14"
+linker := "lld-14"
+projects := "mlir" # semicolon-separated
+
+
+default: build
+
+cmake:
+    cmake -Sllvm -B{{builddir}} -GNinja -DCMAKE_BUILD_TYPE={{build_type}} \
+    -DLLVM_ENABLE_PROJECTS={{projects}} -DLLVM_CCACHE_BUILD=ON -DLLVM_USE_LINKER={{linker}} \
+    -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_BUILD_TOOLS=OFF \
+    -DCMAKE_C_COMPILER={{c_compiler}} -DCMAKE_CXX_COMPILER={{cxx_compiler}}
+
+
+doNinja *ARGS:
+    ninja -C{{builddir}} {{ARGS}}
+
+build: doNinja
+
+alias b := build 
+
+testMlir: (doNinja "check-mlir")
+
+genMlirHeaders: (doNinja "mlir-generic-headers")
