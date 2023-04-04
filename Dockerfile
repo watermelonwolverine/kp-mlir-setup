@@ -35,6 +35,7 @@ COPY dockerstuff/llvm-justfile /home/student/llvm-project/justfile
 
 RUN cd /home/student/llvm-project && just cmake
 RUN cd /home/student/llvm-project && just build
+RUN cd /home/student/llvm-project && LLVM_BUILD_TYPE=Debug just build
 
 ENV LLVM_INSTALL_DIR="/home/student/llvm-project"
 

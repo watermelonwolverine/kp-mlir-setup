@@ -1,5 +1,5 @@
 
-build_type := "Release"
+build_type := env_var_or_default("LLVM_BUILD_TYPE", "Release")
 builddir := "build-" + build_type
 c_compiler := "clang-14"
 cxx_compiler := "clang++-14"
@@ -9,6 +9,7 @@ projects := "mlir" # semicolon-separated
 
 default: build
 
+# note: this is needed on the first build, afterwards ninja refreshes it itself
 cmake:
     cmake -Sllvm -B{{builddir}} -GNinja -DCMAKE_BUILD_TYPE={{build_type}} \
     -DLLVM_ENABLE_PROJECTS={{projects}} -DLLVM_CCACHE_BUILD=ON -DLLVM_USE_LINKER={{linker}} \
@@ -19,7 +20,7 @@ cmake:
 doNinja *ARGS:
     ninja -C{{builddir}} {{ARGS}}
 
-build: doNinja
+build: (doNinja) (doNinja "mlir-translate")
 
 alias b := build 
 
