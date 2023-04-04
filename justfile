@@ -3,7 +3,7 @@ image_name := "ubuntu-kp-mlir"
 
 
 build:
-    docker build -t {{image_name}} -f ./Dockerfile ..
+    docker build -t {{image_name}} -f ./Dockerfile .
 
 alias b := build
 

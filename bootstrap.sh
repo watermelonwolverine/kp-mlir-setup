@@ -11,6 +11,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # get scala
 sdk i scala 3.2.1
+sdk i sbt
 # get graalvm
 sdk i java 22.3.r19-grl
 # get native image
