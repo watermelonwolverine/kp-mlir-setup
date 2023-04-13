@@ -1,3 +1,3 @@
 
 
-Run `install_everything.sh` to install everything. Read through it beforehand.
+Check the contents of `install_everything.sh` and run it to install everything
