@@ -2,8 +2,8 @@
 
 
 # put just in the path
-export PATH="$PATH:/home/student/bin"
+export PATH="$PATH:$HOME/bin"
 # both of these are use in the different justfiles
-export LLVM_INSTALL_DIR="/home/student/llvm-project"
+export LLVM_INSTALL_DIR="$HOME/kp-mlir/llvm-project"
 # default build type
 export LLVM_BUILD_TYPE="Release"
