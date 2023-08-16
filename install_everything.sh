@@ -3,6 +3,7 @@
 # review this and also user-profile.sh
 ROOT_INSTALL_DIR="$HOME/kp-mlir"
 JUST_INSTALL_DIR="$HOME/bin"
+LLVM_DIR="$ROOT_INSTALL_DIR/llvm-project"
 
 mkdir -p "$JUST_INSTALL_DIR"
 mkdir -p "$ROOT_INSTALL_DIR"
@@ -38,11 +39,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -
 PATH="$PATH:$JUST_INSTALL_DIR"
 
 # install LLVM
-git clone --single-branch --depth 1 --branch llvmorg-16.0.0 https://github.com/llvm/llvm-project.git "$ROOT_INSTALL_DIR/llvm-project"
+git clone --single-branch --depth 1 --branch llvmorg-16.0.0 https://github.com/llvm/llvm-project.git "$LLVM_DIR"
 
-cp llvm-justfile "$ROOT_INSTALL_DIR/llvm-project/justfile"
+cp llvm-justfile "$LLVM_DIR/justfile"
 
-pushd $HOME/llvm-project
+pushd "$LLVM_DIR"
 just cmake
 LLVM_BUILD_TYPE=Debug just build
 popd
