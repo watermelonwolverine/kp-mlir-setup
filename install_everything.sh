@@ -43,6 +43,7 @@ git clone --single-branch --depth 1 --branch llvmorg-16.0.0 https://github.com/l
 
 cp llvm-justfile "$LLVM_DIR/justfile"
 
+# Build LLVM
 pushd "$LLVM_DIR"
 export LLVM_BUILD_TYPE=Debug
 just cmake
@@ -53,7 +54,10 @@ popd
 git clone git@github.com:tud-ccc/kp-mlir-sigi-frontend.git "$ROOT_INSTALL_DIR/sigi-frontend"
 git clone git@github.com:tud-ccc/kp-mlir-sigi-mlir.git "$ROOT_INSTALL_DIR/sigi-mlir"
 
+pushd "$ROOT_INSTALL_DIR/sigi-mlir"
 # Record location of llvm build directory for the justfile to find it
-echo "LLVM_BUILD_DIR=$LLVM_BUILD_DIR" > "$ROOT_INSTALL_DIR/sigi-mlir/.env" 
-
-
+echo "LLVM_BUILD_DIR=$LLVM_BUILD_DIR" > .env
+# Build the repo
+just cmake
+just build
+popd
