@@ -22,6 +22,9 @@ doNinja *ARGS:
 
 build: (doNinja) (doNinja "mlir-translate")
 
+printBuildDir:
+    echo {{builddir}}
+
 alias b := build 
 
 testMlir: (doNinja "check-mlir")
