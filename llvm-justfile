@@ -1,13 +1,13 @@
 
 build_type := env_var_or_default("LLVM_BUILD_TYPE", "Release")
 builddir := "build-" + build_type
-c_compiler := "clang-14"
-cxx_compiler := "clang++-14"
-linker := "lld-14"
+c_compiler := "clang"
+cxx_compiler := "clang++"
+linker := "lld"
 projects := "mlir" # semicolon-separated
 
 
-default: build
+default: cmake
 
 # note: this is needed on the first build, afterwards ninja refreshes it itself
 cmake:
