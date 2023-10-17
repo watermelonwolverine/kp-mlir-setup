@@ -10,5 +10,8 @@ Check the contents of `install_everything.sh` and run it to install everything
 2. Check and execute install_system_packages_arch.sh from the project directory
 3. Check and execute install_everything_arch.sh from the project directory
 
+## Working
+1. Call `source init_environment.sh` before starting to work with just
+
 ## Uninstalling
 1. Execute `clean-up.sh` from the project directory

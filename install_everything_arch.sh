@@ -2,7 +2,7 @@
 
 echo "Execute install_system_packages_arch.sh before executing this the first time"
 
-source ./export_targetdir.sh
+source ./init_environment.sh
 
 ROOT_INSTALL_DIR="${targetdir}/kp-mlir"
 JUST_INSTALL_DIR="${targetdir}/just"
