@@ -47,8 +47,8 @@ just build
 LLVM_BUILD_DIR=$(just printBuildDir)
 popd
 
-git clone https://github.com:tud-ccc/kp-mlir-sigi-frontend "$ROOT_INSTALL_DIR/sigi-frontend"
-git clone https://github.com:tud-ccc/kp-mlir-sigi-mlir "$ROOT_INSTALL_DIR/sigi-mlir"
+git clone https://github.com/tud-ccc/kp-mlir-sigi-frontend "$ROOT_INSTALL_DIR/sigi-frontend"
+git clone https://github.com/tud-ccc/kp-mlir-sigi-mlir "$ROOT_INSTALL_DIR/sigi-mlir"
 
 
 pushd "$ROOT_INSTALL_DIR/sigi-frontend"
