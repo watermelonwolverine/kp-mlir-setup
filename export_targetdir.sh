@@ -1,2 +1,2 @@
 
-targetdir="/media/shared/Documents/Studium/Master_Informatik/WS23/CC_lab"
+targetdir="{absolute_path_to_target_installation_dir}"

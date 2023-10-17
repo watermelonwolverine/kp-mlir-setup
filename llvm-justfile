@@ -7,7 +7,7 @@ linker := "lld"
 projects := "mlir" # semicolon-separated
 
 
-default: cmake
+default: build
 
 # note: this is needed on the first build, afterwards ninja refreshes it itself
 cmake:
