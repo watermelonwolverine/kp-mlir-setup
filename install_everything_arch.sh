@@ -2,7 +2,9 @@
 
 echo "Execute install_system_packages_arch.sh before executing this the first time"
 
-source ./init_environment.sh
+script_dir=$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")
+
+source ${script_dir}/init_environment.sh
 
 ROOT_INSTALL_DIR="${targetdir}/kp-mlir"
 JUST_INSTALL_DIR="${targetdir}/just"
