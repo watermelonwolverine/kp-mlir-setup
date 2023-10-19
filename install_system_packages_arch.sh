@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pacman -S --needed clang lld curl unzip zip git ccache cmake ninja gdb valgrind
+pacman -Sy --needed clang lld curl unzip zip git ccache cmake ninja gdb valgrind
