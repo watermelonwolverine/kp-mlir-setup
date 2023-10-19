@@ -18,3 +18,4 @@ Check the contents of `install_everything.sh` and run it to install everything
 ## Uninstalling
 1. Execute `arch/clean-up.sh` from the project directory
 2. Remove `source absolute/path/to/arch/init_environment.sh` from ~/.bash_profile if you added it during installation 
+3. Remove sdkman from PATH

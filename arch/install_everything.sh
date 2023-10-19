@@ -65,7 +65,7 @@ popd
 
 pushd "$ROOT_INSTALL_DIR/sigi-mlir"
 # Record location of llvm build directory for the justfile to find it
-echo "LLVM_BUILD_DIR=$LLVM_BUILD_DIR" > .env
+echo "LLVM_BUILD_DIR=$LLVM_BUILD_DIR" > "${script_dir}/../.env"
 # Build the repo
 just cmake
 just build
