@@ -6,6 +6,11 @@ script_dir=$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")
 
 source ${script_dir}/init_environment.sh
 
+if [[ "${targetdir}" == "{absolute_path_to_target_installation_dir}" ]]; then
+    echo "Error: Edit export_targetdir.sh before calling this"
+    exit 1
+fi
+
 ROOT_INSTALL_DIR="${targetdir}/kp-mlir"
 JUST_INSTALL_DIR="${targetdir}/just"
 LLVM_DIR="$ROOT_INSTALL_DIR/llvm-project"
