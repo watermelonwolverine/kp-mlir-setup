@@ -1,6 +1,6 @@
 script_dir=$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")
 
-source ${script_dir}/export_targetdir.sh
+source "${script_dir}/export_targetdir.sh"
 
 # put just in the path
 export PATH="$PATH:${targetdir}/just"

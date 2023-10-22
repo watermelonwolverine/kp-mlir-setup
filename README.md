@@ -8,7 +8,7 @@ Check the contents of `install_everything.sh` and run it to install everything
 ## Installing
 1. Edit `./arch/export_targetdir.sh`, enter your preferred install location there
 2. Check and execute `./arch/install_system_packages.sh`
-3. Check and execute `./install_everything.sh`
+3. Check and execute `./arch/install_everything.sh`
 4. Optional: Add `source absolute/path/to/arch/init_environment.sh` command to ~/.bash_profile
 
 ## Working

@@ -4,7 +4,7 @@ echo "Execute install_system_packages_arch.sh before executing this the first ti
 
 script_dir=$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")
 
-source ${script_dir}/init_environment.sh
+source "${script_dir}/init_environment.sh"
 
 if [[ "${targetdir}" == "{absolute_path_to_target_installation_dir}" ]]; then
     echo "Error: Edit export_targetdir.sh before calling this"
@@ -44,7 +44,7 @@ PATH="$PATH:$JUST_INSTALL_DIR"
 # install LLVM
 git clone --single-branch --depth 1 --branch llvmorg-16.0.0 https://github.com/llvm/llvm-project.git "$LLVM_DIR"
 
-cp llvm-justfile "$LLVM_DIR/justfile"
+cp "${script_dir}/../llvm-justfile" "$LLVM_DIR/justfile"
 
 # Build LLVM
 pushd "$LLVM_DIR"
